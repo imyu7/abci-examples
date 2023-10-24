@@ -79,7 +79,8 @@ def main(config_file: str, model_name: str = None):
         config["model"]["torch_dtype"] = pydoc.locate(config["model"]["torch_dtype"])
     model = transformers.AutoModelForCausalLM.from_pretrained(**config["model"])
 
-    generate_text = generate_text_fn(model, tokenizer, config["generate"])
+    # generate_text = generate_text_fn(model, tokenizer, config["generate"])
+    generate_text = generate_text_fn(model, tokenizer)
     output_file = output_dir.joinpath(config["outputs"]["filename"])
     with open(output_file, "w") as o_:
         for i, data in zip(range(config["data"]["n_examples"]), dataset):
