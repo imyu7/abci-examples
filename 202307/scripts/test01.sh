@@ -13,4 +13,4 @@ source .venv/bin/activate
 # ABCI ではホームディレクトリ以下の容量は限られているので、キャッシュディレクトリを scratch 領域に変更
 export HF_HOME=/scratch/$(whoami)/.cache/huggingface/
 
-python src/generate_text.py 
+python src/test01.py 
