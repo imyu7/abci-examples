@@ -1,10 +1,11 @@
 model:
-  pretrained_model_name_or_path: "elyza/ELYZA-japanese-Llama-2-7b"
+  pretrained_model_name_or_path: "elyza/ELYZA-japanese-Llama-2-7b-fast-instruct"
   device_map: auto
   trust_remote_code: true
 
 generate:
   max_length: 4096
+  max_new_tokens: 16
   temperature: 0.7
   top_p: 0.9
   repetition_penalty: 1.05
@@ -15,7 +16,7 @@ data:
 
 outputs:
   dirname: outputs
-  filename: generated_text02.jsonl
+  filename: generated_text_${JOB_ID}.jsonl
 
 prompt: |-
   日本の法律に基づき、設問に対する答えを回答してください。

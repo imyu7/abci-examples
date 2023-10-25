@@ -61,7 +61,7 @@ def main(config_file: str):
     # データセットのロード
     logger.info(f"load datasets")
     dataset = load_dataset(test_file=config["data"]["test_file"])
-    dataset = dataset.shuffle(seed=42)
+    # dataset = dataset.shuffle(seed=42)
 
     # トークナイザのロード
     logger.info(f"load tokenizer")
@@ -83,9 +83,12 @@ def main(config_file: str):
     with open(output_file, "w") as o_:
         for i, data in zip(range(config["data"]["n_examples"]), dataset):
             logger.info(f"processing {i}th data.")
+            year = data["year"]
+            subject = data["subject"]
+            Q_no = data["Q_no"]
             prompt = config["prompt"].format_map(data)
             generated = generate_text(prompt)
-            json.dump(dict(prompt=prompt, complete=generated), o_, ensure_ascii=False)
+            json.dump(dict(year=year, subject=subject, Q_no=Q_no, prompt=prompt, complete=generated), o_, ensure_ascii=False)
             o_.write("\n")
             o_.flush()
 
