@@ -1,5 +1,5 @@
 model:
-  pretrained_model_name_or_path: "/groups/4/gcb50389/pretrained/LLaMA2-HF/Llama-2-7b-hf"
+  pretrained_model_name_or_path: "/groups/4/gcb50389/pretrained/llama2-HF/Llama-2-7b-hf"
   device_map: auto
   trust_remote_code: true
 
