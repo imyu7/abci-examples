@@ -16,7 +16,7 @@ data:
 
 outputs:
   dirname: outputs
-  filename: generated_text_03.jsonl
+  filename: generated_text_${JOB_ID}.jsonl
 
 prompt: |-
   日本の法律に基づき、設問に対する答えを回答してください。
