@@ -11,9 +11,9 @@ generate:
   repetition_penalty: 1.05
 
 data:
-  test_file1: data/R1_short_answer_exam_short.json
-  test_file2: data/R2_short_answer_exam_short.json
-  test_file3: data/R3_short_answer_exam_short.json
+  test_file1: data/R1_short_answer_exam.json
+  test_file2: data/R2_short_answer_exam.json
+  test_file3: data/R3_short_answer_exam.json
   n_examples: 2
 
 outputs:
