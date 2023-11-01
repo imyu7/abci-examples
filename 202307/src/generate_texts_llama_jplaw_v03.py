@@ -90,8 +90,6 @@ def main(config_file: str):
             for i, data in enumerate(dataset):
                 if data["subject"] != "民法":
                     continue
-                elif i > 21:
-                    break
                 else:
                     logger.info(f"processing {i}th data.")
                     year = data["year"]
