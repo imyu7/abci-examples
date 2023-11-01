@@ -86,7 +86,7 @@ def main(config_file: str):
         logger.info(f"processing R{j} data.")
         dataset = load_dataset(test_file=config["data"][f"test_file{j}"])
     
-        with open(output_file, "w") as o_:
+        with open(output_file, "a") as o_:
             for i, data in enumerate(dataset):
                 if data["subject"] != "民法":
                     continue
