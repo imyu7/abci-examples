@@ -42,13 +42,18 @@ def generate_text_fn(model, tokenizer, args: dict = {}):
     return generate_text
 
 
-def main(config_file: str):
+def main(config_file: str, model_name: str = None):
     # 設定ファイルの読み込み
     with open(config_file, "r") as i_:
         config = yaml.safe_load(i_)
 
     # config['model'] は AutoModelForCausalLM.from_pretrained で読み込む際のパラメータ
-    model_name = config["model"]["pretrained_model_name_or_path"]
+    if model_name is None:
+        model_name = config["model"]["pretrained_model_name_or_path"]
+    else:
+        config["model"]["pretrained_model_name_or_path"] = model_name
+        
+    logger.info(f"model_name: {model_name}")
     
     # 出力先ディレクトリの設定
     output_dir = pathlib.Path(os.path.expandvars(config["outputs"]["dirname"]))
