@@ -14,3 +14,4 @@ transformers @ git+https://github.com/huggingface/transformers@de9255de27abfcae4
 fire==0.5.0
 # wheel
 # mpi4py==3.1.4
+fsspec==2023.9.2
