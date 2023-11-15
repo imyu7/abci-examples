@@ -10,10 +10,10 @@ generate:
   repetition_penalty: 1.05
 
 data:
-  test_file: ../data/R1_short_answer_exam.json
+  test_file: /data/R1_short_answer_exam.json
 
 outputs:
-  dirname: ../outputs
+  dirname: /outputs
   filename: generated_text_06_1.jsonl
 
 prompt: |-
