@@ -1,7 +1,5 @@
 data:
-  test_file1: ../data/R1_short_answer_exam.json
-  test_file2: ../data/R2_short_answer_exam.json
-  test_file3: ../data/R3_short_answer_exam.json
+  test_file: data/R3_short_answer_exam.json
 generate:
   max_length: 4096
   repetition_penalty: 1.05
@@ -12,8 +10,8 @@ model:
   pretrained_model_name_or_path: /groups/4/gcb50389/pretrained/llama2-HF/Llama-2-7b-hf
   trust_remote_code: true
 outputs:
-  dirname: ../outputs
-  filename: generated_text_05.jsonl
+  dirname: outputs
+  filename: generated_text_06_3.jsonl
 prompt: "\u65E5\u672C\u306E\u6CD5\u5F8B\u306B\u57FA\u3065\u304D\u3001\u8A2D\u554F\u306B\
   \u5BFE\u3059\u308B\u7B54\u3048\u3092\u56DE\u7B54\u3057\u3066\u304F\u3060\u3055\u3044\
   \u3002\n\n\u8A2D\u554F\uFF1A\u610F\u601D\u8868\u793A\u306B\u95A2\u3059\u308B\u6B21\

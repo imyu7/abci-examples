@@ -1,0 +1,51 @@
+INFO:root:model_name: /groups/4/gcb50389/pretrained/llama2-HF/Llama-2-7b-hf
+INFO:root:load tokenizer
+Using pad_token, but it is not set yet.
+INFO:root:set pad_token to </s>
+INFO:root:load model: {'pretrained_model_name_or_path': '/groups/4/gcb50389/pretrained/llama2-HF/Llama-2-7b-hf', 'device_map': 'auto', 'trust_remote_code': True}
+INFO:torch.distributed.nn.jit.instantiator:Created a temporary directory at /tmp/40997928.1.gpu/tmpx237tpg1
+INFO:torch.distributed.nn.jit.instantiator:Writing /tmp/40997928.1.gpu/tmpx237tpg1/_remote_module_non_scriptable.py
+[2023-11-15 23:21:37,894] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [03:19<03:19, 199.29s/it]Loading checkpoint shards: 100%|██████████| 2/2 [04:25<00:00, 121.07s/it]Loading checkpoint shards: 100%|██████████| 2/2 [04:25<00:00, 132.81s/it]
+INFO:root:processing R1 data.
+Traceback (most recent call last):
+  File "/home/acf15802az/abci-examples/202307/src/generate_texts_llama_jplaw_v05_1.py", line 101, in <module>
+    fire.Fire(main)
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/src/generate_texts_llama_jplaw_v05_1.py", line 82, in main
+    dataset = load_dataset(test_file=config["data"]["test_file"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/src/generate_texts_llama_jplaw_v05_1.py", line 21, in load_dataset
+    return datasets.load_dataset("json", data_files=test_file, split="train")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/load.py", line 1773, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/load.py", line 1502, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/load.py", line 1137, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/load.py", line 712, in get_module
+    data_files = DataFilesDict.from_local_or_remote(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/data_files.py", line 783, in from_local_or_remote
+    DataFilesList.from_local_or_remote(
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/data_files.py", line 751, in from_local_or_remote
+    data_files = resolve_patterns_locally_or_by_urls(base_path, patterns, allowed_extensions)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/data_files.py", line 349, in resolve_patterns_locally_or_by_urls
+    for path in _resolve_single_pattern_locally(base_path, pattern, allowed_extensions):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/datasets/data_files.py", line 293, in _resolve_single_pattern_locally
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/home/acf15802az/abci-examples/202307/../data/R1_short_answer_exam.json' at /home/acf15802az/abci-examples/202307

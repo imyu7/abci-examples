@@ -1,0 +1,18 @@
+INFO:root:model_name: /groups/4/gcb50389/pretrained/llama2-HF/Llama-2-7b-hf
+Traceback (most recent call last):
+  File "/home/acf15802az/abci-examples/202307/src/generate_texts_llama_jplaw_v05_1.py", line 101, in <module>
+    fire.Fire(main)
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/acf15802az/abci-examples/202307/src/generate_texts_llama_jplaw_v05_1.py", line 56, in main
+    output_dir.mkdir(parents=True, exist_ok=True)
+  File "/apps/rocky8/python/3.11.2/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/outputs'
