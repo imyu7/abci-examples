@@ -1,5 +1,6 @@
 #!/bin/bash
-#$ -l rt_G.large=6
+#$ -l rt_G.large=1
+#$ -l h_rt=4:00:00
 #$ -j y
 #$ -N generate_text
 #$ -o logs/
