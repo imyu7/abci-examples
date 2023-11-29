@@ -12,6 +12,7 @@ import torch
 import yaml
 
 import transformers
+import peft
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
@@ -71,7 +72,12 @@ def main(config_file: str):
     # torch_dtypeを文字列から型に変換しておく
     if "torch_dtype" in config["model"]:
         config["model"]["torch_dtype"] = pydoc.locate(config["model"]["torch_dtype"])
-    model = transformers.AutoModelForCausalLM.from_pretrained(**config["model"])
+    # model = transformers.AutoModelForCausalLM.from_pretrained(**config["model"])
+    
+    BASE_MODEL_NAME = config["model"]["pretrained_model_name_or_path"]
+    MODEL_DIR = config["model"]["model_dir"]
+    base_model = transformers.AutoModelForCausalLM.from_pretrained(BASE_MODEL_NAME, device_map="auto", trust_remote_code=True)
+    model = peft.PeftModel.from_pretrained(base_model, MODEL_DIR)
 
     generate_text = generate_text_fn(model, tokenizer, config["generate"])
     # generate_text = generate_text_fn(model, tokenizer)
