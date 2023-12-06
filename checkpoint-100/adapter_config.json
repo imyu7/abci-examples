@@ -1,0 +1,26 @@
+{
+  "auto_mapping": null,
+  "base_model_name_or_path": "meta-llama/Llama-2-7b-hf",
+  "bias": "none",
+  "fan_in_fan_out": true,
+  "inference_mode": true,
+  "init_lora_weights": true,
+  "layers_pattern": null,
+  "layers_to_transform": null,
+  "lora_alpha": 4,
+  "lora_dropout": 0.01,
+  "modules_to_save": null,
+  "peft_type": "LORA",
+  "r": 4,
+  "revision": null,
+  "target_modules": [
+    "k_proj",
+    "v_proj",
+    "q_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "task_type": "CAUSAL_LM"
+}
