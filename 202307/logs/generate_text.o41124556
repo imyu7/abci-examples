@@ -1,0 +1,47 @@
+[2023-12-06 18:23:43,741] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+INFO:root:load tokenizer
+Using pad_token, but it is not set yet.
+INFO:root:set pad_token to </s>
+INFO:root:load model: {'pretrained_model_name_or_path': '/groups/4/gcb50389/pretrained/llama2-HF/Llama-2-7b-hf', 'model_dir': '/home/acf15802az/abci-examples/checkpoint-100', 'device_map': 'auto', 'trust_remote_code': True}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [03:26<03:26, 206.71s/it]Loading checkpoint shards: 100%|██████████| 2/2 [04:30<00:00, 122.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [04:30<00:00, 135.12s/it]
+/home/acf15802az/abci-examples/202307/.venv/lib/python3.11/site-packages/peft/tuners/lora.py:275: UserWarning: fan_in_fan_out is set to True but the target module is `torch.nn.Linear`. Setting fan_in_fan_out to False.
+  warnings.warn(
+INFO:root:processing R2 data.
+WARNING:datasets.builder:Found cached dataset json (/scratch/acf15802az/.cache/huggingface/datasets/json/default-e81a17a045232274/0.0.0/e347ab1c932092252e717ff3f949105a4dd28b27e842dd53157d2f72e276c2e4)
+INFO:root:processing 20th data.
+INFO:root:processing 21th data.
+INFO:root:processing 22th data.
+INFO:root:processing 23th data.
+INFO:root:processing 24th data.
+INFO:root:processing 25th data.
+INFO:root:processing 26th data.
+INFO:root:processing 27th data.
+INFO:root:processing 28th data.
+INFO:root:processing 29th data.
+INFO:root:processing 30th data.
+INFO:root:processing 31th data.
+INFO:root:processing 32th data.
+INFO:root:processing 33th data.
+INFO:root:processing 34th data.
+INFO:root:processing 35th data.
+INFO:root:processing 36th data.
+INFO:root:processing 37th data.
+INFO:root:processing 38th data.
+INFO:root:processing 39th data.
+INFO:root:processing 40th data.
+INFO:root:processing 41th data.
+INFO:root:processing 42th data.
+INFO:root:processing 43th data.
+INFO:root:processing 44th data.
+INFO:root:processing 45th data.
+INFO:root:processing 46th data.
+INFO:root:processing 47th data.
+INFO:root:processing 48th data.
+INFO:root:processing 49th data.
+INFO:root:processing 50th data.
+INFO:root:processing 51th data.
+INFO:root:processing 52th data.
+INFO:root:processing 53th data.
+INFO:root:processing 54th data.
+INFO:root:processing 55th data.
+INFO:root:processing 56th data.

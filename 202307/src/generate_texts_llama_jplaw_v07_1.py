@@ -48,9 +48,10 @@ def main(config_file: str):
     with open(config_file, "r") as i_:
         config = yaml.safe_load(i_)
 
-    model_name = config["model"]["pretrained_model_name_or_path"]
+    BASE_MODEL_NAME = config["model"]["pretrained_model_name_or_path"]
+    MODEL_DIR = config["model"]["model_dir"]
         
-    logger.info(f"model_name: {model_name}")
+    # logger.info(f"model_name: {model_name}")
     
     # 出力先ディレクトリの設定
     output_dir = pathlib.Path(os.path.expandvars(config["outputs"]["dirname"]))
@@ -62,7 +63,7 @@ def main(config_file: str):
 
     # トークナイザのロード
     logger.info(f"load tokenizer")
-    tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
+    tokenizer = transformers.AutoTokenizer.from_pretrained(BASE_MODEL_NAME)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
         logger.info(f"set pad_token to {tokenizer.pad_token}")
@@ -74,8 +75,6 @@ def main(config_file: str):
         config["model"]["torch_dtype"] = pydoc.locate(config["model"]["torch_dtype"])
     # model = transformers.AutoModelForCausalLM.from_pretrained(**config["model"])
     
-    BASE_MODEL_NAME = config["model"]["pretrained_model_name_or_path"]
-    MODEL_DIR = config["model"]["model_dir"]
     base_model = transformers.AutoModelForCausalLM.from_pretrained(BASE_MODEL_NAME, device_map="auto", trust_remote_code=True)
     model = peft.PeftModel.from_pretrained(base_model, MODEL_DIR)
 

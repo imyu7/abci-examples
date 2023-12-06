@@ -13,4 +13,4 @@ source .venv/bin/activate
 export HF_HOME=/scratch/$(whoami)/.cache/huggingface/
 export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 
-python src/generate_texts_llama_jplaw_v06_1.py --config_file config/config_generate_texts_llama_jplaw_v06_1.yaml
+python src/generate_texts_llama_jplaw_v07_1.py --config_file config/config_generate_texts_llama_jplaw_v07_1.yaml

@@ -1,5 +1,6 @@
 model:
   pretrained_model_name_or_path: "/groups/4/gcb50389/pretrained/llama2-HF/Llama-2-7b-hf"
+  model_dir: "/home/acf15802az/abci-examples/checkpoint-100"
   device_map: auto
   trust_remote_code: true
 
@@ -10,11 +11,11 @@ generate:
   repetition_penalty: 1.05
 
 data:
-  test_file: data/R3_short_answer_exam.json
+  test_file: data/R2_short_answer_exam.json
 
 outputs:
   dirname: outputs
-  filename: generated_text_06_3.jsonl
+  filename: generated_text_07_2.jsonl
 
 prompt: |-
   日本の法律に基づき、設問に対する答えを回答してください。
